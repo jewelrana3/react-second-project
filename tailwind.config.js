@@ -8,16 +8,43 @@ export default {
     themes: [
       {
         mytheme: {
-          "primary": "#8bc6ed",
-          "secondary": "#7972f9",
-          "accent": "#bbf7f7",
-          "neutral": "#15161E",
-          "base-100": "#513C53",
-          "info": "#8B9CEA",
-          "success": "#18C3A1",
-          "warning": "#CA9716",
-          "error": "#F75983",
-        },
+          
+
+ 
+          "primary": "#a7d655",
+                    
+          
+           
+          "secondary": "#aa293c",
+                    
+          
+           
+          "accent": "#eabc9f",
+                    
+          
+           
+          "neutral": "#1D1E30",
+                    
+          
+           
+          "base-100": "#EAEBEB",
+                    
+          
+           
+          "info": "#72A0EE",
+                    
+          
+           
+          "success": "#155645",
+                    
+          
+           
+          "warning": "#F4D35D",
+                    
+          
+           
+          "error": "#F25065",
+                    },
       },
     ],
   },
