@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../Header/Button/Button';
+import Modal from '../Modal/Modal';
 import SingleData from '../SingleData/SingleData';
 
 
 
 const Card = () => {
     const [data,setData] = useState([]);
-    const [showAll,setShowAll] = useState(false)
+    const [showAll,setShowAll] = useState(false);
+    const [singleData,setSingleData] = useState({})
+    const [unique,setUnique] = useState(null)
+    console.log(unique)
 
     const handleShowAll=()=>{
         setShowAll(true)
     }
+    useEffect(()=>{
+        fetch(`https://openapi.programming-hero.com/api/ai/tool/${unique}`)
+        .then(res => res.json())
+        .then(data => console.log(data))
+    },[unique])
 
     useEffect(()=>{
         const loadData= async()=>{
@@ -32,13 +41,16 @@ const Card = () => {
             } */}
             {
                 data.slice(0,showAll ? 12:6).map((singleData)=>(
-                    <SingleData singleData={singleData} key={singleData.id}/>
+                    <SingleData singleData={singleData} key={singleData.id}
+                    setUnique = {setUnique}/>
                 ))
             }
            </div>
             {
-                !showAll && (<span onClick={handleShowAll}><Button>Show All</Button></span>)
-            }
+                !showAll && 
+                (<span onClick={handleShowAll}><Button>Show All</Button></span>
+                )}
+                <Modal />
         </>
     );
 };

@@ -1,7 +1,13 @@
+import { handler } from 'daisyui';
 import React from 'react';
 
 const SingleData = (props) => {
-    const { image, name, features, published_in } = props.singleData
+    console.log(props)
+    const {id, image, name, features, published_in } = props.singleData;
+
+    // const handlerId = (id) => {
+    //     console.log(id)
+    // }
     return (
         <div>
             <div className="card w-94 bg-base-100 shadow-xl gap-4">
@@ -27,7 +33,11 @@ const SingleData = (props) => {
                             <p>{published_in}</p>
                         </div>
                         <div>
-                            <span className='cursor-pointer'>
+                            <label
+                                onClick={() => props.setUnique(id)}
+                                htmlFor="my-modal"
+                                className="cursor-pointer"
+                            >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -42,7 +52,7 @@ const SingleData = (props) => {
                                         d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
                                     />
                                 </svg>
-                            </span>
+                            </label>
                         </div>
                     </div>
                     {/* <div className="card-actions justify-end">
